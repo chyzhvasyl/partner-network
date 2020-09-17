@@ -1,0 +1,10 @@
+
+.idea
+.vscode
+/_back/node_modules
+/_front/node_modules
+/_back/upload-systems
+*.7z
+*.zip
+*.csv
+*.xlsx
