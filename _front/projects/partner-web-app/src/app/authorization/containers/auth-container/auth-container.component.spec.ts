@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TranslateComponent } from './translate.component';
+import { AuthContainerComponent } from './auth-container.component';
 
-describe('TranslateComponent', () => {
-  let component: TranslateComponent;
-  let fixture: ComponentFixture<TranslateComponent>;
+describe('AuthContainerComponent', () => {
+  let component: AuthContainerComponent;
+  let fixture: ComponentFixture<AuthContainerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TranslateComponent ]
+      declarations: [ AuthContainerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TranslateComponent);
+    fixture = TestBed.createComponent(AuthContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

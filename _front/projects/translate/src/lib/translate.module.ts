@@ -1,12 +1,18 @@
-import { NgModule } from '@angular/core';
-import { TranslateComponent } from './translate.component';
-
-
+import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { LanguageControlServiceService } from "./translate.service";
 
 @NgModule({
-  declarations: [TranslateComponent],
-  imports: [
-  ],
-  exports: [TranslateComponent]
+  providers: [
+    LanguageControlServiceService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (sn: LanguageControlServiceService) =>
+        function() {
+          return sn.init();
+        },
+      deps: [LanguageControlServiceService],
+      multi: true
+    }
+  ]
 })
-export class TranslateModule { }
+export class LanguageModule { }
