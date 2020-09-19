@@ -28,7 +28,8 @@
               "projects/partner-web-app/src/assets"
             ],
             "styles": [
-              "projects/partner-web-app/src/styles.scss"
+              "projects/partner-web-app/src/styles.scss",
+              "projects/partner-web-app/src/themes/themes.scss"
             ],
             "scripts": []
           },

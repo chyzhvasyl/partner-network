@@ -10,6 +10,10 @@ import {environment} from "../../environments/environment";
 import {TokenService} from "../../../../commons/src/lib/services/token.service";
 import {JWT_OPTIONS, JwtHelperService} from "@auth0/angular-jwt";
 import {HttpInterceptorService} from "../../../../commons/src/lib/services/http-interceptor.service";
+import {StoreModule} from "@ngrx/store";
+import {metaReducers, reducers} from "./_store";
+import {EffectsModule} from "@ngrx/effects";
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -30,6 +34,15 @@ const modules = [
       deps: [HttpClient]
     }
   }),
+  StoreModule.forRoot(reducers, {
+    metaReducers,
+    runtimeChecks: {
+      strictStateImmutability: true,
+      strictActionImmutability: true,
+    }
+  }),
+  EffectsModule.forRoot([]),
+  !environment.production ? StoreDevtoolsModule.instrument() : []
 ];
 
 const providers = [

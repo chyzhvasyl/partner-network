@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: () => import('./authorization/authorization.module').then(m => m.AuthorizationModule)
   },
   {
+    path: 'partner-network',
+    loadChildren: () => import('./partner-network/partner-network.module').then(m => m.PartnerNetworkModule)
+  },
+  {
     path: '**',
     redirectTo: 'authorization',
   }

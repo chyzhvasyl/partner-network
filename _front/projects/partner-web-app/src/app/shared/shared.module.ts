@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { VendorsModule } from "../../../../vendors/src/lib/vendors.module";
+import {TranslateModule} from "@ngx-translate/core";
+
+const modules = [
+  VendorsModule,
+  TranslateModule,
+];
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    VendorsModule
-  ]
+  imports: modules,
+  exports: modules
 })
 export class SharedModule { }

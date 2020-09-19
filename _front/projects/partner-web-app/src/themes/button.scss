@@ -1,0 +1,14 @@
+@import "fonts";
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $app-font-size-14;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}

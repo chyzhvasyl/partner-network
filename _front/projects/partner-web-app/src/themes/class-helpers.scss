@@ -1,0 +1,36 @@
+// FLEX OPTIONS
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.reverse-row {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.capital {
+  text-transform: capitalize;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.flex-centered {
+  justify-content: center;
+  align-items: center;
+}
+
+.align-centered {
+  align-items: center;
+}
+
+.justify-centered {
+  justify-content: center;
+}

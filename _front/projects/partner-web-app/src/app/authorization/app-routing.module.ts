@@ -3,11 +3,12 @@ import { RouterModule, Routes } from "@angular/router";
 import { AuthContainerComponent } from "./containers/auth-container/auth-container.component";
 import { SignInComponent } from "./components/sign-in/sign-in.component";
 import { OnlyUnauthorizedGuard } from "../../../../commons/src/lib/router-guards/only-unauthorized.guard";
+import {AuthComponent} from "./components/auth/auth.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: AuthContainerComponent,
+    component: AuthComponent,
     children: [
       {
         path: '',
@@ -16,7 +17,7 @@ const routes: Routes = [
       },
       {
         path: 'sign-in',
-        component: SignInComponent,
+        component: AuthContainerComponent,
         canActivate: [OnlyUnauthorizedGuard],
       },
     ]
