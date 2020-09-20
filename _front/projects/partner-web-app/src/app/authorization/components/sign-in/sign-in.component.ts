@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthorizationService} from "../../services/authorization.service";
 import {PatternsConstants} from "../../../../../../commons/src/lib/constants/patterns.constants";
 import {Router} from "@angular/router";
+import {CoreLinks} from "../../../app-routing.module";
 
 @Component({
   selector: 'app-sign-in',
@@ -15,6 +16,7 @@ export class SignInComponent implements OnInit {
   public passwordFormControl: FormControl;
 
   public showPass: boolean;
+  public coreLinks = CoreLinks;
 
   constructor(
     private _authService: AuthorizationService,
@@ -44,6 +46,6 @@ export class SignInComponent implements OnInit {
 
   public onLogin(): void {
     console.log('this.signInForm', this.signInForm.value);
-    this._router.navigate(['partner-network'])
+    this._router.navigate([this.coreLinks.partner_network])
   }
 }

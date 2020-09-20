@@ -19,6 +19,8 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatButtonModule } from "@angular/material/button";
+import { MatRippleModule } from '@angular/material/core';
+import {MatTableModule} from "@angular/material/table";
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: true,
@@ -49,7 +51,9 @@ const globalRippleConfig: RippleGlobalOptions = {
     DragDropModule,
     MatRadioModule,
     MatProgressSpinnerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatRippleModule,
+    MatTableModule,
   ],
   exports: [
     MatButtonToggleModule,
@@ -70,7 +74,9 @@ const globalRippleConfig: RippleGlobalOptions = {
     DragDropModule,
     MatRadioModule,
     MatProgressSpinnerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatRippleModule,
+    MatTableModule,
   ],
   providers: [
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2000 } },
