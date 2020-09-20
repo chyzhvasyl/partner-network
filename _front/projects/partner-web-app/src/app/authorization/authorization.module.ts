@@ -5,6 +5,7 @@ import { AuthContainerComponent } from './containers/auth-container/auth-contain
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import {SharedModule} from "../shared/shared.module";
 import {AuthComponent} from "./components/auth/auth.component";
+import {AdvertisersService} from "../partner-network/advertisers/services/advertisers.service";
 
 const views = [
   AuthComponent,
@@ -18,7 +19,7 @@ const modules = [
   AuthorizationRoutingModule,
 ];
 
-const providers = [];
+const providers = [AdvertisersService];
 
 @NgModule({
   declarations: views,

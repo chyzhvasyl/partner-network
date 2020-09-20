@@ -17,4 +17,4 @@ export const errorAdvertisers = createAction(ActionTypes.ERROR_ADVERTISERS);
 
 export const updateAdvertiser = createAction(ActionTypes.UPDATE_ADVERTISER, props<{payload: Advertiser}>());
 export const successfullyUpdateAdvertiser = createAction(ActionTypes.SUCCESSFULLY_UPDATE_ADVERTISER, props<{payload: Advertiser}>());
-export const errorSearchPlace = createAction(ActionTypes.ERROR_UPDATE_ADVERTISER);
+export const errorUpdateAdvertiser = createAction(ActionTypes.ERROR_UPDATE_ADVERTISER);
