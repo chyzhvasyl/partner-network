@@ -4,7 +4,10 @@
 /_back/node_modules
 /_front/node_modules
 /_back/upload-systems
+/_back/dist
+/_front/dist
 *.7z
 *.zip
 *.csv
 *.xlsx
+*.env

@@ -1,0 +1,56 @@
+// FLEX OPTIONS
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.reverse-row {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.capital:first-letter {
+  text-transform: capitalize;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.flex-centered {
+  justify-content: center;
+  align-items: center;
+}
+
+.align-centered {
+  align-items: center;
+}
+
+.justify-centered {
+  justify-content: center;
+}
+
+.wrapping {
+  flex-wrap: wrap;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.tab-tittle {
+  padding: 1rem;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
+}

@@ -1,0 +1,23 @@
+@import "../../../../../themes/colors";
+
+.header-component {
+  justify-content: flex-end;
+  width: 100%;
+  display: flex;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+
+  .buttons-container {
+    width: 400px;
+    justify-content: space-between;
+    button {
+        font-weight: normal;
+      letter-spacing: 1px;
+    }
+  }
+
+  .selected-tab {
+    text-decoration: underline $dark-cerulean;
+    color: $dark-cerulean;
+  }
+}

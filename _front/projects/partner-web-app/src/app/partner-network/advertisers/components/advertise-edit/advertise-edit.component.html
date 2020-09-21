@@ -1,0 +1,16 @@
+<form [formGroup]="advertiserForm" class="example-form column">
+  <mat-form-field class="example-full-width">
+    <mat-label>{{'company name' | translate}}</mat-label>
+    <input [formControl]="companyName" matInput required autocomplete="off">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>{{'status' | translate}}</mat-label>
+    <mat-select [formControl]="status">
+      <mat-option [value]="partnerNetworkStatuses.active">{{'active' | translate}}</mat-option>
+      <mat-option [value]="partnerNetworkStatuses.inactive">{{'inactive' | translate}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button (click)="addNewAdvertiser()" mat-raised-button color="primary">{{'add' |  translate}}</button>
+  <button (click)="discard()" mat-button color="primary">{{'cancel' | translate}}</button>
+</form>

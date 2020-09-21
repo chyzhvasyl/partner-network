@@ -1,0 +1,49 @@
+<main class="sign-in-form-comp">
+
+  <section class="comp-container">
+
+    <form class="column" [formGroup]="signInForm">
+
+      <mat-form-field class="form-field simple-field">
+        <mat-label class="capital" for="email">{{'email' | translate}}</mat-label>
+        <input matInput [formControl]="loginFormControl" type="email" id="email" required autocomplete="off"/>
+
+        <mat-error class="error-field capital"
+                   *ngIf="loginFormControl.hasError('required') && (loginFormControl.dirty || loginFormControl.touched)">
+          {{'login' | translate}} {{ 'is required' | translate}}
+        </mat-error>
+
+        <mat-error class="error-field"
+                   *ngIf="!loginFormControl.hasError('required') && loginFormControl.hasError('pattern')">
+          {{'Please enter a valid email address' | translate}}
+        </mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field class="form-field simple-field">
+        <mat-label for="password">{{'Password' | translate}}</mat-label>
+        <input matInput
+               [formControl]="passwordFormControl"
+               id="password"
+               type="{{showPass ? 'text' : 'password'}}"
+               required
+               autocomplete="off"/>
+
+        <span matSuffix>
+          <i class="material-icons" (click)="changePassView()">{{ showPass ? 'visibility_off' : 'visibility'}}</i>
+        </span>
+
+        <mat-error class="error-field"
+                   *ngIf="passwordFormControl.hasError('required') && (passwordFormControl.dirty || passwordFormControl.touched)">
+          {{'Password' | translate}} {{ 'is required' | translate}}
+        </mat-error>
+
+      </mat-form-field>
+
+      <button class="warning-bg primary-color upper" (click)="onLogin()">{{'sign in' | translate}}</button>
+    </form>
+
+  </section>
+
+</main>
+

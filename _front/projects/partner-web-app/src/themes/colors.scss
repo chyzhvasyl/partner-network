@@ -1,0 +1,28 @@
+$dark-cerulean: #095072;
+
+$black: #000000;
+$zircon: #e5e8ea;
+$solitude: #f4f5f9;
+$smoke-gray: #8b8a8a;
+$white: #FFFFFF;
+
+$amaranth: #ed1f4f;
+$dark-tangerine: #f5a50d;
+
+.error-color {
+  color: $amaranth;
+}
+
+.primary-color,
+.color-dark-cerulean {
+  color: $dark-cerulean;
+}
+
+.warning-color {
+  color: $dark-tangerine;
+}
+
+.warning-bg,
+.bg-dark-tangerine {
+  background: $dark-tangerine;
+}

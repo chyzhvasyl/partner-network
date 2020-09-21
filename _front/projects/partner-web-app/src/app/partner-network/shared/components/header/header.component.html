@@ -1,0 +1,12 @@
+<section class="header-component">
+  <div class="row buttons-container wrapping">
+    <button [ngClass]="{'selected-tab': isSelectedTab(partnerNetworkLinks.advertisers)}"
+            (click)="onGoToTab(partnerNetworkLinks.advertisers)" mat-button>{{'advertisers' | translate}}</button>
+    <button [ngClass]="{'selected-tab': isSelectedTab(partnerNetworkLinks.affiliates)}"
+            (click)="onGoToTab(partnerNetworkLinks.affiliates)" mat-button>{{'offers' | translate}}</button>
+    <button [ngClass]="{'selected-tab': isSelectedTab(partnerNetworkLinks.offers)}"
+            (click)="onGoToTab(partnerNetworkLinks.offers)" mat-button>{{'affiliates' | translate}}</button>
+    <button [ngClass]="{'selected-tab': isSelectedTab(partnerNetworkLinks.users)}"
+            (click)="onGoToTab(partnerNetworkLinks.users)" mat-button>{{'users' | translate}}</button>
+  </div>
+</section>

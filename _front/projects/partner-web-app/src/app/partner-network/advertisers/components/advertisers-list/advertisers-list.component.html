@@ -1,0 +1,8 @@
+<section class="advertisers-list-component">
+  <div class="centered-text tab-tittle capital font-22">{{'advertisers' | translate}}</div>
+
+  <div class="row flex-end add-new-advertise">
+    <button class="upper" (click)="onAdd()" mat-raised-button color="primary">{{'add advertiser'}}</button>
+  </div>
+  <app-advertisers-table [dataSource]="dataSource" [displayedColumns]="displayedColumns"></app-advertisers-table>
+</section>
