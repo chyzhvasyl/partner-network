@@ -15,4 +15,8 @@ export class AdvertisersService {
   getAdvertisersList(): Observable<Advertiser[]> {
     return this._http.get<Advertiser[]>(this.baseUrl);
   }
+
+  updateAdvertiserById(advertiser: Advertiser): Observable<Advertiser> {
+    return this._http.put<Advertiser>(this.baseUrl, {});
+  }
 }

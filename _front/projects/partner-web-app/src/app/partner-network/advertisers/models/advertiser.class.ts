@@ -13,3 +13,7 @@ export class Advertiser {
 
   }
 }
+
+export class ExtendedAdvertiser {
+  offers: any[]
+}

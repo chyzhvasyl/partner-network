@@ -7,6 +7,17 @@ $app-font-size-18: 18px !default;
 $app-font-size-20: 20px !default;
 $app-font-size-22: 22px !default;
 
+$app-font-bold: 600;
+$app-font-semibold: 500;
+
 .font-22 {
   font-size: $app-font-size-22;
+}
+
+.font-bold {
+  font-weight: $app-font-bold;
+}
+
+.font-semibold {
+  font-weight: $app-font-semibold;
 }

@@ -21,6 +21,8 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatButtonModule } from "@angular/material/button";
 import { MatRippleModule } from '@angular/material/core';
 import {MatTableModule} from "@angular/material/table";
+import {MatCardModule} from "@angular/material/card";
+import {MatDividerModule} from "@angular/material/divider";
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: true,
@@ -54,6 +56,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatButtonModule,
     MatRippleModule,
     MatTableModule,
+    MatCardModule,
+    MatDividerModule,
   ],
   exports: [
     MatButtonToggleModule,
@@ -77,6 +81,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatButtonModule,
     MatRippleModule,
     MatTableModule,
+    MatCardModule,
+    MatDividerModule,
   ],
   providers: [
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2000 } },

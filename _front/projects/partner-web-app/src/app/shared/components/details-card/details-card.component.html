@@ -1,0 +1,18 @@
+<section class="details-component">
+  <mat-card>
+      <div class="centered-text capital header-text font-semibold font-14">{{headerText}}</div>
+    <mat-divider></mat-divider>
+    <ng-container *ngIf="data; else noData">
+      <div *ngFor="let row of data | keyvalue">
+        <div class="row space-between">
+          <span class="font-bold">{{row.key}} {{':'}}</span> <span>{{row.value}}</span>
+        </div>
+        <mat-divider></mat-divider>
+      </div>
+    </ng-container>
+  </mat-card>
+
+  <ng-template #noData>
+    <div class="capital centered-text">{{'no data'}}</div>
+  </ng-template>
+</section>

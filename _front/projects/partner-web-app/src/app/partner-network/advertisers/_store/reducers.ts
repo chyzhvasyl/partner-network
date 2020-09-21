@@ -1,7 +1,8 @@
-import {Action, createReducer, on} from "@ngrx/store";
-import {Advertiser} from "../models/advertiser.class";
+import {Action, createAction, createReducer, on, props} from "@ngrx/store";
+import {Advertiser, ExtendedAdvertiser} from "../models/advertiser.class";
 import * as advertiseActions from './actions'
 import update from 'immutability-helper';
+import {ActionTypes} from "./actions";
 
 export const advertisePartnerNetwork = 'advertisePartnerNetwork';
 
@@ -10,7 +11,11 @@ export interface AdvertisersState {
     data: Advertiser[] | null,
     loaded: boolean | null
   },
-  advertisersAreUpdating: boolean
+  advertisersAreUpdating: boolean,
+  advertiser: {
+    data: ExtendedAdvertiser | null,
+    loaded: null | boolean
+  }
 }
 
 export const initialState: AdvertisersState = {
@@ -18,7 +23,8 @@ export const initialState: AdvertisersState = {
     data: null,
     loaded: null
   },
-  advertisersAreUpdating: false
+  advertisersAreUpdating: false,
+  advertiser: null
 };
 
 const advertiseReducer = createReducer(
@@ -78,6 +84,33 @@ const advertiseReducer = createReducer(
 
     ...state,
     advertisersAreUpdating: false
+  })),
+
+  on(advertiseActions.loadAdvertiser, (state, action) => ({
+
+    ...state,
+    advertiser: {
+      loaded: null,
+      data: null
+    }
+  })),
+
+  on(advertiseActions.setAdvertiser, (state, action) => ({
+
+    ...state,
+    advertiser: {
+      loaded: true,
+      data: action.payload
+    }
+  })),
+
+  on(advertiseActions.errorAdvertiser, (state, action) => ({
+
+    ...state,
+    advertisers: {
+      loaded: false,
+      data: null
+    }
   })),
 );
 

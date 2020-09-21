@@ -14,7 +14,7 @@
   flex-direction: column;
 }
 
-.capital {
+.capital:first-letter {
   text-transform: capitalize;
 }
 
@@ -49,4 +49,8 @@
 
 .flex-end {
   justify-content: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
 }

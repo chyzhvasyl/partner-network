@@ -14,6 +14,8 @@ import {StoreModule} from "@ngrx/store";
 import {metaReducers, reducers} from "./_store";
 import {EffectsModule} from "@ngrx/effects";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {routerReducer, RouterStateSerializer, StoreRouterConnectingModule} from "@ngrx/router-store";
+import {CustomSerializer} from "../../../../utils/router.utils";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -39,10 +41,11 @@ const modules = [
     runtimeChecks: {
       strictStateImmutability: true,
       strictActionImmutability: true,
-    }
+    },
   }),
   EffectsModule.forRoot([]),
-  !environment.production ? StoreDevtoolsModule.instrument() : []
+  !environment.production ? StoreDevtoolsModule.instrument() : [],
+  StoreRouterConnectingModule.forRoot(),
 ];
 
 const providers = [
@@ -51,6 +54,10 @@ const providers = [
   { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
   { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true },
   { provide: LocationStrategy,  useClass: HashLocationStrategy },
+  {
+    provide: RouterStateSerializer,
+    useClass: CustomSerializer,
+  },
 ];
 
 

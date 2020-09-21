@@ -30,4 +30,19 @@ export class AdvertiserEffects {
       )
     )
   );
+
+  updateAdvertiserById$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(advertiserActions.updateAdvertiser),
+      switchMap((action) => {
+          return this._advertiserService.updateAdvertiserById(action.payload).pipe(
+            map(advertisers => {
+              return advertiserActions.successfullyUpdateAdvertiser({payload: advertisers})
+            }),
+            catchError((error: HttpErrorResponse) => of(advertiserActions.errorUpdateAdvertiser()))
+          )
+        }
+      )
+    )
+  );
 }

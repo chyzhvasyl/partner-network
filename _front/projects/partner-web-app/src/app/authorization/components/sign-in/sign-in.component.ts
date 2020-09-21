@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {AuthorizationService} from "../../services/authorization.service";
-import {PatternsConstants} from "../../../../../../commons/src/lib/constants/patterns.constants";
-import {Router} from "@angular/router";
-import {CoreLinks} from "../../../app-routing.module";
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthorizationService} from '../../services/authorization.service';
+import {PatternsConstants} from '../../../../../../commons/src/lib/constants/patterns.constants';
+import {Router} from '@angular/router';
+import {CoreLinks} from '../../../app-routing.module';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,8 +11,8 @@ import {CoreLinks} from "../../../app-routing.module";
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-  public signInForm:          FormGroup;
-  public loginFormControl:    FormControl;
+  public signInForm: FormGroup;
+  public loginFormControl: FormControl;
   public passwordFormControl: FormControl;
 
   public showPass: boolean;
@@ -40,12 +40,11 @@ export class SignInComponent implements OnInit {
     });
   }
 
-  public changePassView() {
+  public changePassView(): void {
     this.showPass = !this.showPass;
   }
 
   public onLogin(): void {
-    console.log('this.signInForm', this.signInForm.value);
-    this._router.navigate([this.coreLinks.partner_network])
+    this._router.navigate([this.coreLinks.partner_network]);
   }
 }
